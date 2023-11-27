@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bibi Sucos2</title>
+    <link rel="stylesheet" href="styles2.css">
+
+</head>
+<body>
+    <div class="botoes-elencos">
+        <header>
+            <h1>Atletas Botafogo 2023-2</h1>
+            <button id="btn-sair">Sair</button>
+        </header>
+        
+        <div id="barra-escolha">
+            <button id="masculino">Masculino</button>
+            <button id="feminino">Feminino</button>
+            <button id="all">Elenco Completo</button>
+
+            <select id="escolher"  onchange="redirecionarPagina()">
+                <option hidden selected disabled>Escolha seu elenco</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="all">Elenco Completo</option>
+            </select>
+        </div>
+
+        <script>
+            function redirecionarPagina() {
+                var escolha = document.getElementById("escolha").value;
+        
+                // Verificar a opção selecionada e redirecionar para a página correspondente
+                if (escolha === "masculino") {
+                    window.location.href = "index_masc.html";
+                } else if (escolha === "feminino") {
+                    window.location.href = "index_fem.html";
+                } else if (escolha === "all") {
+                    window.location.href = "index_all.html";
+                }
+            }
+        </script>
+
+        <script>
+        
+            document.getElementById('btn-sair').addEventListener('click', function() {
+              
+                window.location.href = 'index.html';
+            });
+        </script>
+        <script>
+            document.getElementById('masculino').addEventListener('click', function(){
+                window.location.href = 'index_masc.html';
+            });
+
+            document.getElementById('feminino').addEventListener('click', function(){
+                window.location.href = 'index_fem.html';
+            });
+
+            document.getElementById('all').addEventListener('click', function(){
+                window.location.href = 'index_all.html';
+            });
+        </script>
+
+    </div>
+
+    <div id="container-jogadores"></div>
+
+    
+</body>
+</html>

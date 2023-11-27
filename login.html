@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIBISUCOS</title>
+    <script src="md5.js" ></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <h1> ELENCO BOTAFOGO</h1>
+        <img src="LOGO.png" alt="Logo Botafogo">
+    </header>
+
+
+        <div id='painel'> 
+            <input id="inserir-senha" type="text" placeholder="Senha">
+            <button id="entrar"> Entrar </button> 
+            <p>Faça o login com a senha: "0000"</p></div>
+        
+        <script> 
+        document.getElementById ('entrar').addEventListener ('click', function(){
+            var senhaInserida = document.getElementById('inserir-senha').value;
+           
+            var senhaInseridaHash = hex_md5(senhaInserida);
+           
+            var senhaCorretaHash = '4a7d1ed414474e4033ac29ccb8653d9b';
+
+            if (senhaInseridaHash === senhaCorretaHash) {
+              
+                window.location.href = 'index.html';
+            } else {
+                
+                alert('Senha incorreta. Tente novamente.');
+            }
+            });</script>
+            
+        
+
+</body>
+</html>
